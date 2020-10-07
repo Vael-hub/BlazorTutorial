@@ -1,0 +1,112 @@
+﻿@page "/editemployee/{id}"
+@page "/editemployee"
+@inherits EditEmployeeBase
+
+<EditForm Model="@EditEmployeeModel" OnValidSubmit="HandleValidSubmit">
+    <!--Pour la validation de type de données complexe on utilise-->
+    <ObjectGraphDataAnnotationsValidator />
+    <!--DataAnnotationsValidator est utilisé uniqement pour des types simple-->
+    @*<DataAnnotationsValidator />*@
+    <h3>@PageHeader</h3>
+    <hr />
+    <ValidationSummary />
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Prénom :
+        </label>
+        <div class="col-sm-4">
+            <InputText id="firstName" class="form-control" placeholder="Prénom" @bind-Value="EditEmployeeModel.FirstName" />
+            <ValidationMessage For="@(() => EditEmployeeModel.FirstName)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastName" class="col-sm-2 col-form-label">
+            Nom :
+        </label>
+        <div class="col-sm-4">
+            <InputText id="lastName" class="form-control" placeholder="Nom" @bind-Value="EditEmployeeModel.LastName" />
+            <ValidationMessage For="@(() => EditEmployeeModel.LastName)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">
+            E-Mail :
+        </label>
+        <div class="col-sm-4">
+            <InputText id="email" class="form-control" placeholder="Email" @bind-Value="EditEmployeeModel.Email" />
+            <ValidationMessage For="@(() => EditEmployeeModel.Email)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="confirmEmail" class="col-sm-2 col-form-label">
+            Confirmer l'E-Mail :
+        </label>
+        <div class="col-sm-4">
+            <InputText id="confirmEmail" class="form-control" @bind-Value="EditEmployeeModel.ConfirmEmail" />
+            <ValidationMessage For="@(() => EditEmployeeModel.ConfirmEmail)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="department" class="col-sm-2 col-form-label">
+            Pôle :
+        </label>
+        <div class="col-sm-4">
+            <CustomInputSelect id="department" class="form-control" placeholder="Pôle" @bind-Value="EditEmployeeModel.DepartmentId">
+                @foreach (Department dep in Departments)
+                {
+                    <option value="@dep.DepartmentId">@dep.DepartmentName</option>
+                }
+            </CustomInputSelect>
+        </div>
+        <!--Bloc avec l'input select sans surcharge et le Department id parse en string de la classe base-->
+        @*<div class="col-sm-4">
+                <InputSelect id="department" class="form-control" placeholder="Pôle" @bind-Value="DepartmentId">
+                    @foreach(Department dep in Departments)
+                    {
+                        <option value="@dep.DepartmentId">@dep.DepartmentName</option>
+                    }
+                </InputSelect>
+            </div>*@
+    </div>
+    <div class="form-group row">
+        <label for="gender" class="col-sm-2 col-form-label">
+            Genre :
+        </label>
+        <div class="col-sm-4">
+            <CustomInputSelect class="form-control" placeholder="Genre" @bind-Value="EditEmployeeModel.Gender">
+                @foreach (Gender gen in Enum.GetValues(typeof(Gender)))
+                {
+                    <option value="@gen">@gen</option>
+                }
+            </CustomInputSelect>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="dateOfBirth" class="col-sm-2 col-form-label">
+            Date de naissance :
+        </label>
+        <div class="col-sm-4">
+            <InputDate class="form-control" @bind-Value="EditEmployeeModel.DateOfBirth"></InputDate>
+        </div>
+    </div>
+    @*Le champ Nom du pole ci-dessous ne sert que d'exemple pour l'utilisation du composant
+        ObjectGraphDataAnnotationsValidator avec l'attribut ValidateComplexType du modèle *@
+    @*<div class="form-group row">
+            <label for="deptName" class="col-sm-2 col-form-label">
+                Nom du Pôle :
+            </label>
+            <div id="deptName" class="col-sm-4">
+                <InputText class="form-control" placeholder="Nom du pôle" @bind-Value="EditEmployeeModel.Department.DepartmentName" />
+                <ValidationMessage For="@(() => EditEmployeeModel.Department.DepartmentName)" />
+            </div>
+        </div>*@
+    <a href="/" class="btn btn-primary">Retour</a>
+    <button class="btn btn-primary" type="submit">Soumettre</button>
+    @if (EditEmployeeModel.EmployeeId > 0)
+    {
+        <button class="btn btn-danger" type="button" @onclick="Delete_Onclick">Supprimer</button>
+    }
+</EditForm>
+
+<Confirm ConfirmationSuppression="ConfirmDelete_Onclick" @ref="ConfirmationSuppression"
+         ConfirmationMessage=@($"Êtes-vous sûre de vouloir supprimer {EditEmployeeModel.LastName} {EditEmployeeModel.FirstName} ?")></Confirm>

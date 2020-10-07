@@ -1,0 +1,31 @@
+﻿@page "/cascading"
+@inherits CascadingParentBase
+
+<h4 style="@Style">Blazor cascading parent - @Counter</h4>
+<hr />
+<CascadingValue Value="@Counter" IsFixed="false">
+    <CascadingValue Value="@Style" Name="Style" IsFixed="true">
+        <CascadingValue Value="@BorderStyle" Name="BorderStyle" IsFixed="true">
+            <h3><u>Cascade multiple avec deux propriétés string avec l'attribut Name</u></h3>
+            <CascadingChild></CascadingChild>
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue>
+
+<CascadingValue Value="@Counter" IsFixed="false">
+    <CascadingValue Value="@Style" IsFixed="true">
+        <CascadingValue Value="@BorderStyle" IsFixed="true">
+            <h3><u>Cascade multiple avec deux propriétés string sans l'attribut Name</u></h3>
+            <CascadingGrandChild></CascadingGrandChild>
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue>
+<br/>
+<button class="btn btn-primary" @onclick="IncrementCounter">
+    Counter
+</button>
+<button class="btn btn-danger" @onclick="ResetCounter">
+    Reset
+</button>
+
+

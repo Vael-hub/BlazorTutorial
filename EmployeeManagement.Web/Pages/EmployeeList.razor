@@ -1,0 +1,25 @@
+﻿@page "/"
+@inherits EmployeeListBase
+
+<h3>Liste des employés</h3>
+
+<h4>Employés sélectionnés : @EmployeeSelectionCount</h4> 
+
+@if (Employees == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <div class="card-deck">
+        @foreach (var employee in Employees)
+        {
+            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter"
+                             EmployeeSelected="EmployeeSelectionChange"
+                             EmployeeDeleted="EmployeeDeletedChange">
+            </DisplayEmployee>
+        }
+    </div>
+}
+<input type="checkbox" id="showFooter" @bind="ShowFooter" />
+<label for="showFooter">Affichage du footer</label>

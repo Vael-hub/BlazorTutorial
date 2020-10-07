@@ -1,0 +1,26 @@
+﻿@page "/attributeSplatting"
+
+<h3>Utilisation de la projection d'attributs</h3>
+<hr/>
+
+<div>
+    <AttributeSplatting placeholder="Parent Holder" extra="10" supattribute="extra value"></AttributeSplatting>
+</div>
+<br/>
+<div>
+    <AttributeSplatting></AttributeSplatting>
+</div>
+
+
+@code {
+    // Utilisation d'attributs arbitraire avec ajout d'attributs non présent dans le composant enfant
+    // Le dictionnaire est donc inutilisable pour ce cas
+    //public Dictionary<string, object> attributesParent { get; set; } =
+    //    new Dictionary<string, object>()
+    //    {
+    //            {"required", "required" },
+    //            {"placeholder", "placeholder du composant parent" },
+    //            {"size", "50" },
+    //            {"maxlegth", "50" }
+    //    };
+}

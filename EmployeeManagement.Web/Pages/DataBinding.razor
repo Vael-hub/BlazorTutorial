@@ -1,0 +1,59 @@
+﻿@page "/databinding"
+@inherits DataBindingBase
+
+<h1>Liaisons des données</h1>
+<hr/>
+<h3>Première méthode</h3>
+
+<!--Association de données faite en dur dans la classe base-->
+<div>
+    <b>Nom :</b> @Name
+</div>
+<!--Vérification sur la variable gender initialisée dans la classe base
+    pour une adaptation du texte en fonction du genre-->
+<div>
+    <b>Bien le bonjour :</b> @(Gender == "Male" ? $"Monsieur { Name}" : $"Madame {Name}")
+</div>
+
+<hr/>
+<h3>Deuxième méthode</h3>
+
+<!--La modification avec l'évènement onchange se fait à la perte du focus-->
+<div>
+    <b>Nom :</b> <input value="@Name" @onchange="@Name_Change" />
+    <!--déclaration de l'event onchange avec une lambda
+        <input value ="@Name" @onchange="@(e => {Name = e.value.ToString();})">-->
+</div>
+<br />
+<!--Le bind fonction comme le onchange sur la perte de focus mais ne nécessite pas la lambda et ou la fonction de la classe base-->
+<div>
+    <b>Genre :</b> <input @bind="Gender" />
+</div>
+<br />
+<!--En associant l'évènement oninput au bind la modification de la donnée se fait à la volée-->
+<div>
+    <b>Nom :</b> <input @bind="Name" @bind:event="oninput" />
+</div>
+<br />
+<!--On peut appliquer le bind avec un attribut-->
+<div>
+    <b>Couleur :</b> <input @bind="Color" />
+</div>
+<br />
+<!--Ici on va attribuer notre propriété color avec l'attribut style sur l'événèment onchange
+    ce qui aura pour effet de modifier le background color du text à la perte de focus de l'inpu-->
+<div @bind-style="Color" @bind-style:event="onchange">
+    <h4>La démonstration du changement de style de la couleur</h4>
+</div>
+
+<hr />
+<h3>Continuité de la liaison de données</h3>
+
+<b>Description</b>
+
+<div>
+    <textarea @bind="Description" @bind:event="oninput" style="width:500px; height:200px;"/>
+</div>
+<div>
+    <b>Count :</b> @Description.Length
+</div>

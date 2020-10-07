@@ -1,0 +1,30 @@
+﻿@*Input avec plusieurs attributs sans utiliser l'attribute splatting (projection d'attributs)*@
+@*<input id="firstName" required="@Required" placeholder="@Placeholder" maxlength="@Maxlength" size="@Size"/>*@
+
+@*Les attributs sont traités de droite à gauche ainsi si l'attribut placheholder est set avec Default à droite du @attribute il ne sera pas modifiable dans le composant parent.*@
+<input placeholder="Child Holder" @attributes="InputAttributes" extra="5" />
+
+@code
+{
+    //Propriétés du composant sans la projection d'attributs (attribute splatting)
+    //[Parameter]
+    //public string Placeholder { get; set; } = "placeholder du composant enfant";
+    //[Parameter]
+    //public string Required { get; set; } = "required";
+    //[Parameter]
+    //public string Size { get; set; } = "25";
+    //[Parameter]
+    //public string Maxlength { get; set; } = "25";
+
+    //Composant avec la projection d'attributs (attribute splatting)
+    //Attribut Parameter avec la propriété à true pour la capture d'attributs non présent
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes { get; set; } =
+        new Dictionary<string, object>();
+    //{
+    //        {"required", "required" },
+    //        {"placeholder", "placeholder du composant enfant" },
+    //        {"size", "25" },
+    //        {"maxlegth", "25" }
+    //};
+}
