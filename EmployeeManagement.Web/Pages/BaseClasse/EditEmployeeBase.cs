@@ -105,18 +105,6 @@ namespace EmployeeManagement.Web.Pages
             //inutile suite à la surcharge de l'inputselect par la création d'un composant custom
             //DepartmentId = Employee.DepartmentId.ToString();
 
-
-            //Copie des données avant la mise en place de l'auto mapping 
-            //EditEmployeeModel.EmployeeId = Employee.EmployeeId;
-            //EditEmployeeModel.FirstName = Employee.FirstName;
-            //EditEmployeeModel.LastName = Employee.LastName;
-            //EditEmployeeModel.Email = Employee.Email;
-            //EditEmployeeModel.ConfirmEmail = Employee.Email;
-            //EditEmployeeModel.DateOfBirth = Employee.DateOfBirth;
-            //EditEmployeeModel.Gender = Employee.Gender;
-            //EditEmployeeModel.PhotoPath = Employee.PhotoPath;
-            //EditEmployeeModel.DepartmentId = Employee.DepartmentId;
-            //EditEmployeeModel.Department = Employee.Department;
         }
 
         /// <summary>
