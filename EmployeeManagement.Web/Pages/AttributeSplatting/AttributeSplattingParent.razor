@@ -5,10 +5,36 @@
 
 <div>
     <AttributeSplatting placeholder="Parent Holder" extra="10" supattribute="extra value"></AttributeSplatting>
+    
+    <p>
+        <br />
+        Ici on utilise le composant AttributSpaltting créé. Le paremètre "CaptureUnmatchedValues" permet l'utilisation d'attrribut arbitraire <br />
+        C'est à dire un attribut non présent dans le composant utilisé.
+        <img src="/images/ComponentAttributeSplattingUse.jpg"/>
+    </p>
 </div>
 <br/>
 <div>
     <AttributeSplatting></AttributeSplatting>
+    <p>
+        <br />
+        Ici c'est le composant créé avec les valeurs initiales. Il est important de faire attention à l'ordre de renseignement des attributs dans le composant.<br />
+        Les Attributs sont interprétés de droite à gauche, ainsi un attribut initialisé avec une valeur à droite de la déclaration du dictionnaire ne pourra pas voir cette valeur
+        modifiée dans le composant parent. <br/>
+        <img src="/images/attributSplattingCode.jpg" />
+        <br/>
+    </p>
+</div>
+<br/>
+<div>
+    <p>
+        Dans la console on voit le résultat des différents attributs passés du composant enfant au composant parent. <br/>
+        On constate que l'attribut "supattribute" présent dans le parent ne pose aucun soucis car le dictionnaire bénéficie du paramètre adéquat. <br/>
+        De plus la valeur de l'attribut "extra" ayant été valorisé à 5 à droite du dictionnaire n'a pas pu être modifié par le composant parent car il possédait déjà une valeur avant d'être transmise.
+        <br/>
+        <br/>
+        <img src="/images/attributSplattingConsole.jpg"/>
+    </p>
 </div>
 
 

@@ -6,16 +6,6 @@
 
 @code
 {
-    //Propriétés du composant sans la projection d'attributs (attribute splatting)
-    //[Parameter]
-    //public string Placeholder { get; set; } = "placeholder du composant enfant";
-    //[Parameter]
-    //public string Required { get; set; } = "required";
-    //[Parameter]
-    //public string Size { get; set; } = "25";
-    //[Parameter]
-    //public string Maxlength { get; set; } = "25";
-
     //Composant avec la projection d'attributs (attribute splatting)
     //Attribut Parameter avec la propriété à true pour la capture d'attributs non présent
     [Parameter(CaptureUnmatchedValues = true)]
