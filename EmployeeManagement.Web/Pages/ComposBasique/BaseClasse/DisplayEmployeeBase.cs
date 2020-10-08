@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TutoBlazorCustom.Components;
 
-namespace EmployeeManagement.Web.Pages
+namespace EmployeeManagement.Web.Pages.ComposBasique
 {
     public class DisplayEmployeeBase : ComponentBase
     {

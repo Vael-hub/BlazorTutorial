@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement.Web.Pages.Cascading
+namespace EmployeeManagement.Web.Pages.ComposBasique.Cascading
 {
     public class CascadingChildBase : ComponentBase
     {
