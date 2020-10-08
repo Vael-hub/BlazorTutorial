@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement.Web.Pages
+namespace EmployeeManagement.Web.Pages.ComposBasique
 {
     public class EmployeeListBase : ComponentBase
     {

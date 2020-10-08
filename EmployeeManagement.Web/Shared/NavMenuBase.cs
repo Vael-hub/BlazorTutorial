@@ -14,6 +14,8 @@ namespace EmployeeManagement.Web.Shared
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
+        protected bool expandSubNav;
+
         protected bool collapseNavMenu = true;
 
         protected string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
