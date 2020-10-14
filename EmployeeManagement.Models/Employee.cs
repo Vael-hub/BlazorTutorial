@@ -9,7 +9,7 @@ namespace EmployeeManagement.Models
     public class Employee
     {
 
-        protected int EmployeeId { get; set; }
+        public int EmployeeId { get; set; }
         /// <summary>
         /// prénom de l'employé
         /// </summary>
