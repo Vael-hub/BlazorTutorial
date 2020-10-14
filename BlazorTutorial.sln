@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Api", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoBlazorCustom.Components", "TutoBlazorCustom.Components\TutoBlazorCustom.Components.csproj", "{C766B053-9516-4C74-94F0-650B08510B45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Api", "ClientManagement.Api\CustomerManagement.Api.csproj", "{496296E0-D140-435D-B3ED-0BDD32C5D3DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Models", "CustomerManagement.Models\CustomerManagement.Models.csproj", "{AA11C70A-4F73-4F3B-9B8B-1F9E9BB85F62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C766B053-9516-4C74-94F0-650B08510B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C766B053-9516-4C74-94F0-650B08510B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C766B053-9516-4C74-94F0-650B08510B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496296E0-D140-435D-B3ED-0BDD32C5D3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496296E0-D140-435D-B3ED-0BDD32C5D3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496296E0-D140-435D-B3ED-0BDD32C5D3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496296E0-D140-435D-B3ED-0BDD32C5D3DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA11C70A-4F73-4F3B-9B8B-1F9E9BB85F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA11C70A-4F73-4F3B-9B8B-1F9E9BB85F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA11C70A-4F73-4F3B-9B8B-1F9E9BB85F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA11C70A-4F73-4F3B-9B8B-1F9E9BB85F62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

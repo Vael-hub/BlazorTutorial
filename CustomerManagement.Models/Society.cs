@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EmployeeManagement.Models
+namespace CustomerManagement.Models
 {
-    class Project
+    public class Society
     {
+
     }
 }
