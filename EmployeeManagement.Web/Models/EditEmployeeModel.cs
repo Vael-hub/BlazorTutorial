@@ -1,10 +1,11 @@
 ﻿using EmployeeManagement.Models;
-using EmployeeManagement.Models.ValidatorsCustom;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using TutoBlazorCustom.Components.ValidatorsCustom;
 
 namespace EmployeeManagement.Web.Models
 {

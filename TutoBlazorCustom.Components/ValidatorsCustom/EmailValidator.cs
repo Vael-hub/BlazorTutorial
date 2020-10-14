@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace EmployeeManagement.Models.ValidatorsCustom
+namespace TutoBlazorCustom.Components.ValidatorsCustom
 {
     public class EmailValidator: ValidationAttribute
     {

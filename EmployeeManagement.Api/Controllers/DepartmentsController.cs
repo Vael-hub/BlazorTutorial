@@ -56,5 +56,56 @@ namespace EmployeeManagement.Api.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Department>> AddDepartment(Department department)
+        {
+            try
+            {
+                if(department == null)
+                {
+                    return BadRequest();
+                }
+
+                Department dep = await departmentRepository.GetDepartment(department.DepartmentId);
+
+                if (dep.DepartmentName == department.DepartmentName)
+                {
+                    ModelState.AddModelError("DepartmentName","Le pole existe déjà");
+                    return BadRequest(ModelState);
+                }
+
+                Department departmentCreated = await departmentRepository.AddDepartment(department);
+
+                return CreatedAtAction(nameof(GetDepartment), new { id = departmentCreated.DepartmentId }, departmentCreated);
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Impossible de créer le pole ");
+            }
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<Department>> UpdateEmployee(Department department)
+        {
+            try
+            {
+                Department departmentToUpdate = await departmentRepository.GetDepartment(department.DepartmentId);
+
+                if (departmentToUpdate == null)
+                {
+                    return NotFound($"Le pole avec l'id = {department.DepartmentId} n'existe pas");
+                }
+
+                return await departmentRepository.UpdateDepartment(department);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Impossible de modifier le pole ");
+            }
+        }
+
     }
 }

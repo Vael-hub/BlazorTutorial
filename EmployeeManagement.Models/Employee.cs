@@ -1,15 +1,15 @@
-﻿using EmployeeManagement.Models.ValidatorsCustom;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using TutoBlazorCustom.Components.ValidatorsCustom;
 
 namespace EmployeeManagement.Models
 {
     public class Employee
     {
 
-        public int EmployeeId { get; set; }
+        protected int EmployeeId { get; set; }
         /// <summary>
         /// prénom de l'employé
         /// </summary>
