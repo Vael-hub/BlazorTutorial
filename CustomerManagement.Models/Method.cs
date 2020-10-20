@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomerManagement.Models
+namespace BusinessManagement.Models
 {
     public enum Method
     {

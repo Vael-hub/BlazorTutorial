@@ -3,14 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomerManagement.Models
+namespace BusinessManagement.Models
 {
     public class Project
     {
-        /// <summary>
-        /// Nom du client
-        /// </summary>
-        public Customer Customer { get; set; }
+        public int ProjectId { get; set; }
         /// <summary>
         /// Code projet pour imputation
         /// </summary>
@@ -30,11 +27,7 @@ namespace CustomerManagement.Models
         /// <summary>
         /// Nombre de personnes sur le projet
         /// </summary>
-        public int Resources { get; set; }
-        /// <summary>
-        /// Employés sur le projet
-        /// </summary>
-        public Employee Employee { get; set; }
+        public int Resources { get; set; }        
         /// <summary>
         /// Projet dans les temps ou non
         /// </summary>
@@ -43,5 +36,9 @@ namespace CustomerManagement.Models
         /// Méthode de gestion du projet
         /// </summary>
         public Method Method { get; set; }
+        /// <summary>
+        /// Equipe du projet
+        /// </summary>
+        public Team Team { get; set; }
     }
 }
