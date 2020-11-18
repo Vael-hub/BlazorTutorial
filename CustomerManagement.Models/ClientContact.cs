@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CustomerManagement.Models
+namespace BusinessManagement.Models
 {
-    public class Customer
+    public class ClientContact
     {
+        public int ContactId { get; set; }
         /// <summary>
         /// Prénom du client
         /// </summary>
@@ -24,13 +25,9 @@ namespace CustomerManagement.Models
         [EmailAddress(ErrorMessage = "L'adresse mail n'est pas valide")]
         public string Mail { get; set; }
         /// <summary>
-        /// Nom de la société
+        /// Société du contact
         /// </summary>
-        public string SocietyName { get; set; }
-        /// <summary>
-        /// Adresse de la société
-        /// </summary>
-        public string SocietyAdress { get; set; }
-        
+        public Society Society { get; set; }
+
     }
 }
